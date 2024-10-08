@@ -30,7 +30,7 @@ export default function About() {
             <CardDescription>I like to sleep</CardDescription>
           </CardHeader>
           <CardContent>
-            <Image src={pacMan} />
+            <Image src={pacMan} alt="Pacman" />
             <div className="flex flex-row gap-2">
               <p className="font-bold">Name:</p>
               Ryan
