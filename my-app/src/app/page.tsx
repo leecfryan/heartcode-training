@@ -1,5 +1,5 @@
 import Image from "next/image";
-import coke from "./assets/cocaine.png";
+import coke from "./assets/cocaine.jpg";
 import Heroin from "./assets/heroin_powder.jpg";
 import meth from "./assets/meth.jpeg";
 import marijuana from "./assets/marijuana.jpg";
