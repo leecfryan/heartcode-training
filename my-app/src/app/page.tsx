@@ -24,7 +24,7 @@ export default function Home() {
     // <div className="flex flex-col justify-center h-dvh bg-[url('/pac-man.jpg')] bg-cover">
     <div className="flex flex-col justify-center">
       <p className="font-bold text-center text-5xl">Don't do drugs</p>
-      <p className="text-small text-center">Drugs are harmful</p>
+      <p className="text-small text-center italic">Drugs are harmful</p>
       <hr className="my-5" />
       <div className="flex flex-col justify-center px-7">
         <Accordion type="single" collapsible>
