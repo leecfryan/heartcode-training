@@ -46,9 +46,9 @@ export default function About() {
 
         <Card className="w-1/2 m-2">
           <CardHeader>
-            <CardTitle>Create project</CardTitle>
+            <CardTitle>Login</CardTitle>
             <CardDescription>
-              Deploy your new project in one-click.
+              Login with your credentials
             </CardDescription>
           </CardHeader>
           <CardContent>
