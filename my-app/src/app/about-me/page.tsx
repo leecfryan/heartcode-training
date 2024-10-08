@@ -8,23 +8,14 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import pacMan from "@/app/assets/pac-man.jpg";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
+import Card2 from '@/app/components/card/card'
 
 export default function About() {
   return (
     <div className="flex flex-col">
-      About Page!
       <div className="flex flex-row">
-        <Card className="w-1/2 m-2">
+        <Card className=" m-2">
           <CardHeader>
             <CardTitle>Hello, I am Ryan</CardTitle>
             <CardDescription>I like to sleep</CardDescription>
@@ -43,43 +34,10 @@ export default function About() {
             </div>
           </CardContent>
         </Card>
-
-        <Card className="w-1/2 m-2">
-          <CardHeader>
-            <CardTitle>Login</CardTitle>
-            <CardDescription>
-              Login with your credentials
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form>
-              <div className="grid w-full items-center gap-4">
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" />
-                </div>
-                <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="framework">Framework</Label>
-                  <Select>
-                    <SelectTrigger id="framework">
-                      <SelectValue placeholder="Select" />
-                    </SelectTrigger>
-                    <SelectContent position="popper">
-                      <SelectItem value="next">Next.js</SelectItem>
-                      <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                      <SelectItem value="astro">Astro</SelectItem>
-                      <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-            </form>
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
-          </CardFooter>
-        </Card>
+{/* 
+        <Card2 title="Testing">
+          <p>This is a test on my component</p>
+        </Card2> */}
       </div>
     </div>
   );
