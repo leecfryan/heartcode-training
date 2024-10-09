@@ -63,7 +63,7 @@ export function NavigationBar() {
               <span className="sr-only">Toggle theme</span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="border-0">
             <DropdownMenuItem onClick={() => setTheme("light")}>
               Light
             </DropdownMenuItem>
