@@ -1,6 +1,6 @@
 // components/Card.tsx
 import { FC, ReactNode } from 'react';
-import { Card as ShadCard, CardHeader, CardTitle, CardContent, CardImage } from "@/components/ui/card";
+import { Card as ShadCard, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 interface CardProps {
   title: string;
@@ -12,7 +12,11 @@ const Card: FC<CardProps> = ({ title, image, children }) => {
   return (
     <ShadCard className="w-full max-w-sm rounded-lg border border-gray-200 shadow-lg">
       {image && (
-        <CardImage className="w-full h-48 object-cover" src={image} alt={title} />
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-48 object-cover rounded-t-lg"
+        />
       )}
       <CardHeader>
         <CardTitle className="text-lg font-semibold">{title}</CardTitle>

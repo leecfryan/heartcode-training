@@ -2,7 +2,7 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
+  // CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -35,8 +35,11 @@ export default function About() {
           </CardContent>
         </Card>
 {/* 
-        <Card2 title="Testing">
+        <Card2 
+        title="Testing"
+        image="@/app/assets/pac-man.jpg">
           <p>This is a test on my component</p>
+          <p>This is another thing</p>
         </Card2> */}
       </div>
     </div>

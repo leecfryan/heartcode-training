@@ -1,11 +1,11 @@
 "use client";
 
-import { z } from "zod";
+import { boolean, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
-import { toast } from "@/components/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -33,9 +33,16 @@ const formSchema = z.object({
   question2: z.enum(["True", "False"], {
     required_error: "You need to pick between true or false",
   }),
+  question3: z.enum(
+    ["addiction", "overdose", "infection", "all of the above"],
+    {
+      required_error: "Pick one of the options.",
+    }
+  ),
 });
 
 export default function Quiz() {
+  const { toast } = useToast();
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,11 +54,44 @@ export default function Quiz() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+    if (values.question1 == 500) {
+      toast({
+        title: `Congrats ${values.username}`,
+      });
+    } else {
+      toast({
+        title: `Sorry ${values.username} you got question 1 wrong`,
+        description: "Try again",
+      });
+    }
+
+    if (values.question2 === "True"){
+      toast({
+        title: `Congrats ${values.username}`,
+      });
+    }else{
+      toast({
+        title: `Sorry ${values.username} you got question 2 wrong`,
+        description: "Try again",
+      });
+    }
+
+    if (values.question3 === "all of the above"){
+      toast({
+        title: `Congrats ${values.username}`,
+      });
+    }else{
+      toast({
+        title: `Sorry ${values.username} you got question 3 wrong`,
+        description: "Try again",
+      });
+    }
+
+    console.log(values.question3);
   }
 
   return (
-    <div>
+    <div className="px-5">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -59,7 +99,7 @@ export default function Quiz() {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Name</FormLabel>
                 <FormControl>
                   <Input placeholder="name" {...field} />
                 </FormControl>
@@ -82,7 +122,7 @@ export default function Quiz() {
                 </FormControl>
                 <FormDescription>
                   What is the amount of marijuana you can carry before death
-                  penalty?
+                  penalty? (in grams)
                 </FormDescription>
                 <FormMessage />
               </FormItem>
@@ -115,6 +155,54 @@ export default function Quiz() {
                         <RadioGroupItem value="False" />
                       </FormControl>
                       <FormLabel className="font-normal">False</FormLabel>
+                    </FormItem>
+                  </RadioGroup>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="question3"
+            render={({ field }) => (
+              <FormItem className="space-y-3">
+                <FormLabel>Question 3</FormLabel>
+                <FormDescription>
+                  What is the primary risk associated with injecting drugs?
+                </FormDescription>
+                <FormControl>
+                  <RadioGroup
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                    className="flex flex-col space-y-1"
+                  >
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="addiction" />
+                      </FormControl>
+                      <FormLabel className="font-normal">Addiction</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="overdose" />
+                      </FormControl>
+                      <FormLabel className="font-normal">Overdose</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="infection" />
+                      </FormControl>
+                      <FormLabel className="font-normal">Infection</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex items-center space-x-3 space-y-0">
+                      <FormControl>
+                        <RadioGroupItem value="all of the above" />
+                      </FormControl>
+                      <FormLabel className="font-normal">
+                        All of the above
+                      </FormLabel>
                     </FormItem>
                   </RadioGroup>
                 </FormControl>

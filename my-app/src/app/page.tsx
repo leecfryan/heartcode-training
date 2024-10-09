@@ -3,6 +3,7 @@ import coke from "./assets/cocaine.jpg";
 import Heroin from "./assets/heroin_powder.jpg";
 import meth from "./assets/meth.jpeg";
 import marijuana from "./assets/marijuana.jpg";
+import { FlipWords } from "@/components/ui/flip-words";
 
 import {
   Accordion,
@@ -20,11 +21,16 @@ import {
 } from "@/components/ui/card";
 
 export default function Home() {
+  const words: string[] = ["$20", "$40", "$25"];
+  const drugs: string[] = ["Weed", "Coke", "Ice"];
   return (
     // <div className="flex flex-col justify-center h-dvh bg-[url('/pac-man.jpg')] bg-cover">
     <div className="flex flex-col justify-center">
       <p className="font-bold text-center text-5xl">Don't do drugs</p>
       <p className="text-small text-center italic">Drugs are harmful</p>
+      <h1 className="font-bold text-4xl text-center">
+        <FlipWords words={drugs} />:<FlipWords words={words} />
+      </h1>
       <hr className="my-5" />
       <div className="flex flex-col justify-center px-7">
         <Accordion type="single" collapsible>
