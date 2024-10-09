@@ -19,6 +19,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
 
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+
 export function NavigationBar() {
   const { setTheme } = useTheme();
   return (
@@ -46,6 +53,12 @@ export function NavigationBar() {
             </Link>
           </NavigationMenuItem>
         </NavigationMenu>
+        <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="mt-3 ml-2">
             <Button variant="outline" size="icon">
