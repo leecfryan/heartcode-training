@@ -1,10 +1,4 @@
-import Image from "next/image";
-import coke from "./assets/cocaine.jpg";
-import Heroin from "./assets/heroin_powder.jpg";
-import meth from "./assets/meth.jpeg";
-import marijuana from "./assets/marijuana.jpg";
 import { FlipWords } from "@/components/ui/flip-words";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 import {
@@ -14,13 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import MyCarousel from "./components/MyCarousel/MyCarousel";
 
 export default function Home() {
   const words: string[] = ["Alcohol", "Drugs"];
@@ -59,88 +47,108 @@ export default function Home() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-          <div className="flex flex-row max-w-1/2 p-2 m-2">
-            <Card className="w-1/2 m-2">
-              <CardHeader>
-                <CardTitle>Cocaine</CardTitle>
-                <CardDescription>Stimulant</CardDescription>
-              </CardHeader>
-              <CardContent className="mt-4">
-                <Image src={coke} alt="Cocaine" className="h-[200px]" />
-                <ScrollArea className="h-[200px] rounded-md border p-4">
-                  Cocaine is a potent stimulant derived from coca leaves,
-                  commonly found as a white powder or crystal. It increases
-                  dopamine levels, causing euphoria and heightened energy, but
-                  also carries serious risks like addiction, cardiovascular
-                  problems, and anxiety. Its illegal status is due to these
-                  dangers and its potential for abuse.
-                </ScrollArea>
-              </CardContent>
-            </Card>
+          <div className="flex flex-row align-middle justify-center w-full">
+            <div className="w-1/2">
+              <MyCarousel />
+            </div>
+            {/* <Carousel>
+              <CarouselItem>
+                <Card className="w-1/2 m-2">
+                  <CardHeader>
+                    <CardTitle>Cocaine</CardTitle>
+                    <CardDescription>Stimulant</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-4">
+                    <Image src={coke} alt="Cocaine" className="h-[200px]" />
+                    <ScrollArea className="h-[200px] rounded-md border p-4">
+                      Cocaine is a potent stimulant derived from coca leaves,
+                      commonly found as a white powder or crystal. It increases
+                      dopamine levels, causing euphoria and heightened energy,
+                      but also carries serious risks like addiction,
+                      cardiovascular problems, and anxiety. Its illegal status
+                      is due to these dangers and its potential for abuse.
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
 
-            <Card className="w-1/2 m-2">
-              <CardHeader>
-                <CardTitle>Heroin</CardTitle>
-                <CardDescription>Depressants</CardDescription>
-              </CardHeader>
-              <CardContent className="mt-4">
-                <Image src={Heroin} alt="heroin" className="h-[200px]" />
-                <ScrollArea className="h-[200px] rounded-md border p-4">
-                  Heroin is an opioid drug synthesized from morphine, which is
-                  derived from the opium poppy. It typically appears as a white
-                  or brown powder or as a black sticky substance known as "black
-                  tar." Heroin is highly addictive and produces intense feelings
-                  of euphoria, relaxation, and pain relief. However, it also
-                  carries significant risks, including respiratory depression,
-                  overdose, and a high potential for dependence and addiction.
-                  Long-term use can lead to severe health complications and
-                  social issues. Due to these dangers, heroin is illegal in many
-                  countries.
-                </ScrollArea>
-              </CardContent>
-            </Card>
+              <CarouselItem>
+                <Card className="w-1/2 m-2">
+                  <CardHeader>
+                    <CardTitle>Heroin</CardTitle>
+                    <CardDescription>Depressants</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-4">
+                    <Image src={Heroin} alt="heroin" className="h-[200px]" />
+                    <ScrollArea className="h-[200px] rounded-md border p-4">
+                      Heroin is an opioid drug synthesized from morphine, which
+                      is derived from the opium poppy. It typically appears as a
+                      white or brown powder or as a black sticky substance known
+                      as "black tar." Heroin is highly addictive and produces
+                      intense feelings of euphoria, relaxation, and pain relief.
+                      However, it also carries significant risks, including
+                      respiratory depression, overdose, and a high potential for
+                      dependence and addiction. Long-term use can lead to severe
+                      health complications and social issues. Due to these
+                      dangers, heroin is illegal in many countries.
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
 
-            <Card className="w-1/2 m-2">
-              <CardHeader>
-                <CardTitle>Marijuana</CardTitle>
-                <CardDescription>Cannabis</CardDescription>
-              </CardHeader>
-              <CardContent className="mt-4">
-                <Image src={marijuana} alt="Marijuana" className="h-[200px]" />
-                <ScrollArea className="h-[200px] rounded-md border p-4">
-                  Marijuana, also known as cannabis, is a plant that contains
-                  psychoactive compounds, primarily THC (tetrahydrocannabinol).
-                  It is often used for recreational and medicinal purposes,
-                  producing effects like relaxation, euphoria, and altered
-                  perception. While marijuana is legal in some regions, it
-                  remains illegal in others, and its use can have potential
-                  risks, including impaired cognitive function and dependency in
-                  some users.
-                </ScrollArea>
-              </CardContent>
-            </Card>
+              <CarouselItem>
+                <Card className="w-1/2 m-2">
+                  <CardHeader>
+                    <CardTitle>Marijuana</CardTitle>
+                    <CardDescription>Cannabis</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-4">
+                    <Image
+                      src={marijuana}
+                      alt="Marijuana"
+                      className="h-[200px]"
+                    />
+                    <ScrollArea className="h-[200px] rounded-md border p-4">
+                      Marijuana, also known as cannabis, is a plant that
+                      contains psychoactive compounds, primarily THC
+                      (tetrahydrocannabinol). It is often used for recreational
+                      and medicinal purposes, producing effects like relaxation,
+                      euphoria, and altered perception. While marijuana is legal
+                      in some regions, it remains illegal in others, and its use
+                      can have potential risks, including impaired cognitive
+                      function and dependency in some users.
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
 
-            <Card className="w-1/2 m-2">
-              <CardHeader>
-                <CardTitle>Methamphetamine</CardTitle>
-                <CardDescription>stimulant</CardDescription>
-              </CardHeader>
-              <CardContent className="mt-4">
-                <Image src={meth} alt="Meth" className="h-[200px]" />
-                <ScrollArea className="h-[200px] rounded-md border p-4">
-                  Methamphetamine is a powerful and highly addictive stimulant
-                  that affects the central nervous system. It appears as a
-                  white, odorless, bitter-tasting crystalline powder or in
-                  crystal form (commonly called "crystal meth"). Methamphetamine
-                  increases dopamine levels in the brain, leading to heightened
-                  energy, euphoria, and increased focus. However, it also poses
-                  severe risks, including addiction, cardiovascular problems,
-                  dental issues (often referred to as "meth mouth"), and
-                  neurotoxicity. Its illegal status in many places reflects its
-                  potential for abuse and significant health hazards.
-                </ScrollArea>
-              </CardContent>
-            </Card>
+              <CarouselItem>
+                <Card className="w-1/2 m-2">
+                  <CardHeader>
+                    <CardTitle>Methamphetamine</CardTitle>
+                    <CardDescription>stimulant</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-4">
+                    <Image src={meth} alt="Meth" className="h-[200px]" />
+                    <ScrollArea className="h-[200px] rounded-md border p-4">
+                      Methamphetamine is a powerful and highly addictive
+                      stimulant that affects the central nervous system. It
+                      appears as a white, odorless, bitter-tasting crystalline
+                      powder or in crystal form (commonly called "crystal
+                      meth"). Methamphetamine increases dopamine levels in the
+                      brain, leading to heightened energy, euphoria, and
+                      increased focus. However, it also poses severe risks,
+                      including addiction, cardiovascular problems, dental
+                      issues (often referred to as "meth mouth"), and
+                      neurotoxicity. Its illegal status in many places reflects
+                      its potential for abuse and significant health hazards.
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel> */}
           </div>
         </div>
       </div>
