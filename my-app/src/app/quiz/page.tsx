@@ -87,7 +87,8 @@ export default function Quiz() {
       });
     }
 
-    const isDrugDealer = values.question2 === "True" ? true : false;
+    // const isDrugDealer = values.question2 === "True" ? true : false;
+    const isDrugDealer = incorrectQuestions.length === 0 ? true : false;
 
     await insertOneUser(values.username, isDrugDealer);
 
