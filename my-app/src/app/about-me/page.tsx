@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import pacMan from "@/app/assets/pac-man.jpg";
 
-import Card2 from '@/app/components/card/card'
+import Card2 from '@/app/components/MyCarousel/MyCarousel'
 
 export default function About() {
   return (

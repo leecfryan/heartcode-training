@@ -24,23 +24,23 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 export function NavigationBar() {
   const { setTheme } = useTheme();
   return (
-    <div className="flex align-middle justify-between sticky top-0 px-7 min-w-full bg-none">
+    <div className="flex align-middle justify-between sticky top-0 px-7 min-w-full z-50 backdrop-blur-sm bg-inherit/30 ">
       <NavigationMenu className="list-none h-16">
-        <NavigationMenuItem>
+        <NavigationMenuItem className="mx-2">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="mx-2">
           <Link href="/quiz" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Quiz
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="mx-2">
           <Link href="/about-me" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About me

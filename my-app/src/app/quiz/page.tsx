@@ -4,7 +4,6 @@ import { boolean, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { insertOneUser } from "../server/user";
 
 const formSchema = z.object({
   username: z
@@ -51,7 +51,7 @@ export default function Quiz() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     if (values.question1 == 500) {
@@ -65,7 +65,7 @@ export default function Quiz() {
       });
     }
 
-    if (values.question2 === "True"){
+    if (values.question2 === 'True'){
       toast({
         title: `Congrats ${values.username}`,
       });
@@ -86,7 +86,8 @@ export default function Quiz() {
         description: "Try again",
       });
     }
-
+    const isDrugDealer = true ? values.question2 === "True" : false;
+    await insertOneUser(values.username, isDrugDealer)
     console.log(values.question3);
   }
 
