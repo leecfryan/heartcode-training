@@ -4,8 +4,6 @@ import { NavigationBar } from "./components/navbar/navigation-menu";
 import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-
 
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -43,14 +41,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <NavigationBar />
-            <div>
-              <SignedOut>
-                <SignInButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div>
+
             {children}
             <Toaster />
           </ThemeProvider>

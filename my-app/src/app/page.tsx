@@ -4,7 +4,6 @@ import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 
 import MyInfiniteScroll from "./components/MyInfiniteScroll/MyInfiniteScroll";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   const words: string[] = ["Alcohol", "Drugs"];
