@@ -33,7 +33,6 @@ const MyCarousel = () => {
           <Card className="backdrop-blur-sm bg-inherit/30 shadow-lg shadow-cyan-500/50 m-2">
             <CardHeader>
               <CardTitle>Cocaine</CardTitle>
-              <CardDescription>Stimulant</CardDescription>
             </CardHeader>
             <CardContent>
               <Image
@@ -62,7 +61,6 @@ const MyCarousel = () => {
           <Card className="backdrop-blur-sm bg-inherit/30 shadow-lg shadow-cyan-500/50 m-2">
             <CardHeader>
               <CardTitle>Marijuana</CardTitle>
-              <CardDescription>Cannabis</CardDescription>
             </CardHeader>
             <CardContent>
               <Image
@@ -92,7 +90,6 @@ const MyCarousel = () => {
           <Card className="backdrop-blur-sm bg-inherit/30 shadow-lg shadow-cyan-500/50 m-2">
             <CardHeader>
               <CardTitle>Methamphetamine</CardTitle>
-              <CardDescription>Stimulant</CardDescription>
             </CardHeader>
             <CardContent>
               <Image
@@ -122,7 +119,6 @@ const MyCarousel = () => {
           <Card className="backdrop-blur-sm bg-inherit/30 shadow-lg shadow-cyan-500/50 m-2">
             <CardHeader>
               <CardTitle>Heroin</CardTitle>
-              <CardDescription>Depressant</CardDescription>
             </CardHeader>
             <CardContent>
               <Image
@@ -153,7 +149,6 @@ const MyCarousel = () => {
           <Card className="backdrop-blur-sm bg-inherit/30 shadow-lg shadow-cyan-500/50 m-2">
             <CardHeader>
               <CardTitle>LSD</CardTitle>
-              <CardDescription>Hallucinogens</CardDescription>
             </CardHeader>
             <CardContent>
               <Image
