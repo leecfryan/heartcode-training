@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import pacMan from "@/app/assets/pac-man.jpg";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
 
 export default function About() {
