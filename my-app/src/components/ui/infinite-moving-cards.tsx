@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Url } from "next/dist/shared/lib/router/router";
+import { StaticImageData } from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
@@ -16,7 +16,7 @@ export const InfiniteMovingCards = ({
     quote: string;
     name: string;
     title: string;
-    image: string;
+    image: string | StaticImageData;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
