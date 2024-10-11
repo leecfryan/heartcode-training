@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <div className="font-bold text-center text-5xl uppercase">
             DON'T DO
-            <FlipWords words={words} />
+            <span><FlipWords words={words} /></span>
           </div>
           <div className="mt-5 hover:scale-150 transition ease-in-out">
             <HoverBorderGradient
