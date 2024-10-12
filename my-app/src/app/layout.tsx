@@ -4,9 +4,9 @@ import { NavigationBar } from "./components/navbar/navigation-menu";
 import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-
-import { ClerkProvider } from "@clerk/nextjs";
-
+import {
+  ClerkProvider,
+} from "@clerk/nextjs";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -41,7 +41,6 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <NavigationBar />
-
             {children}
             <Toaster />
           </ThemeProvider>
