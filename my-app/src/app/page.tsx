@@ -31,10 +31,12 @@ export default function Home() {
       </BackgroundBeamsWithCollision>
 
       <div className="flex flex-col pt-20 justify-center px-7 h-full bg-gradient-to-t from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800">
-        <div className="flex flex-col h-full" id="drug_types">
+        <div className="flex flex-col h-full w-full" id="drug_types">
           <h1 className="font-sans antialiased text-center text-2xl font-bold">
             Drug Types
           </h1>
+        </div>
+        <div className="flex flex-row justify-center w-full pb-10">
           <MyInfiniteScroll />
         </div>
       </div>

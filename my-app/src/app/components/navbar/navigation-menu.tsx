@@ -55,7 +55,7 @@ export function NavigationBar() {
       </NavigationMenu>
       <div className="flex flex-row align-middle">
         <SignedOut>
-          <SignInButton />
+          <SignInButton/>
         </SignedOut>
         <SignedIn>
           <UserButton />
